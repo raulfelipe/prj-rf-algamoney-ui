@@ -4,12 +4,12 @@
   <p-column field="descricao" header="Descrição"></p-column>
   <p-column field="dataVencimento" header="Vencimento" styleClass="col-data">
     <ng-template let-lanc="rowData" pTemplate="body">
-        {{lanc.dataVencimento | date:'dd/MM/yyyy'}}
+      {{lanc.dataVencimento | date:'dd/MM/yyyy'}}
     </ng-template>
   </p-column>
   <p-column field="dataPagamento" header="Pagamento" styleClass="col-data">
     <ng-template let-lanc="rowData" pTemplate="body">
-        {{lanc.dataPagamento | date:'dd/MM/yyyy'}}
+      {{lanc.dataPagamento | date:'dd/MM/yyyy'}}
     </ng-template>
   </p-column>
   <p-column field="valor" header="Valor" styleClass="col-valor">
@@ -20,10 +20,10 @@
     </ng-template>
   </p-column>
   <p-column styleClass="col-acoes">
-      <ng-template pTemplate="body">
-        <a pButton icon="fa-pencil" pTooltip="Editar" toolTipPosition="top"></a>
-        <button pButton icon="fa-trash"  pTooltip="Excluir" toolTipPosition="top"></button>
-      </ng-template>
+    <ng-template pTemplate="body">
+      <a pButton icon="fa-pencil" pTooltip="Editar" toolTipPosition="top"></a>
+      <a pButton icon="fa-trash" pTooltip="Excluir" toolTipPosition="top"></a>
+    </ng-template>
   </p-column>
 
 </p-dataTable>
