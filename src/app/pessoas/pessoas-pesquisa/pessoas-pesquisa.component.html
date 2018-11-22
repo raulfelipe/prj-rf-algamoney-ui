@@ -2,22 +2,26 @@
 
   <div class="ui-g">
 
-    <div class="ui-g-12">
+    <form autocomplete="off" (ngSubmit)="pesquisar()">
 
-      <h1>Pessoas</h1>
+      <div class="ui-g-12">
 
-    </div>
+        <h1>Pessoas</h1>
 
-    <div class="ui-g-12 ui-fluid">
+      </div>
 
-      <label>Nome:</label>
-      <input  pInputText type="text">
+      <div class="ui-g-12 ui-fluid">
 
-    </div>
+        <label>Nome:</label>
+        <input pInputText type="text" name="nome" [(ngModel)]="filtro.nome">
 
-    <div class="ui-g-12">
-      <button pButton type="submit" label="Pesquisar"></button>
-    </div>
+      </div>
+
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Pesquisar"></button>
+      </div>
+
+    </form>
 
   </div>
 
@@ -25,7 +29,28 @@
 
     <div class="ui-g-12">
 
-      <app-pessoas-grid [pessoas]="pessoas"></app-pessoas-grid>
+      <p-dataTable [value]="pessoas" [paginator]="true" [responsive]="true" [rows]="filtro.itensPorPagina" [lazy]="true"
+        [totalRecords]="totalRegistros" (onLazyLoad)="aoMudarPagina($event)">
+
+        <p-column field="nome" header="Nome"></p-column>
+        <p-column field="endereco.cidade" header="Cidade"></p-column>
+        <p-column field="endereco.estado" header="Estado"></p-column>
+        <p-column field="ativo" header="Status">
+          <ng-template let-pes="rowData" pTemplate="body">
+            <a href="javascript:;" [style.color]="pes.ativo === true ? 'blue' : 'red'" [pTooltip]="pes.ativo === true ? 'Desativar' : 'Ativar'"
+              toolTipPosition="top">
+              {{pes.ativo ? 'Ativo' : 'Inativo'}}
+            </a>
+          </ng-template>
+        </p-column>
+        <p-column styleClass="col-acoes">
+          <ng-template pTemplate="body">
+            <a pButton icon="fa-pencil" pTooltip="Editar" toolTipPosition="top"></a>
+            <a pButton icon="fa-trash" pTooltip="Excluir" toolTipPosition="top"></a>
+          </ng-template>
+        </p-column>
+
+      </p-dataTable>
 
     </div>
 
