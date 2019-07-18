@@ -7,6 +7,7 @@ import { ConfirmationService } from 'primeng/components/common/confirmationservi
 
 import { PessoaService } from '.././pessoas/pessoa.service';
 import { LancamentoService } from '.././lancamentos/lancamento.service';
+import { CategoriaService } from '../categorias/categoria.service';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { ErrorHandleService } from './error-handle.service';
@@ -32,6 +33,7 @@ registerLocaleData(localePt, 'pt-BR');
   providers: [
     LancamentoService,
     PessoaService,
+    CategoriaService,
     ErrorHandleService,
 
     ConfirmationService,
