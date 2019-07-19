@@ -1,5 +1,6 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { ToastyModule } from 'ng2-toasty';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -19,10 +20,13 @@ registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   imports: [
+    
     CommonModule,
+    RouterModule,
 
     ToastyModule.forRoot(),
     ConfirmDialogModule
+
   ],
   declarations: [NavbarComponent],
   exports: [

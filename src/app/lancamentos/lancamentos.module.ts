@@ -16,6 +16,7 @@ import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
 
 import { SharedModule } from './../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { SharedModule } from './../shared/shared.module';
     SelectButtonModule,
     DropdownModule,
     CurrencyMaskModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   declarations: [
     LancamentoCadastroComponent,
