@@ -15,6 +15,8 @@ import { ErrorHandleService } from './error-handle.service';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
+import { Title } from '@angular/platform-browser';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -28,7 +30,7 @@ registerLocaleData(localePt, 'pt-BR');
     ConfirmDialogModule
 
   ],
-  declarations: [NavbarComponent],
+  declarations: [NavbarComponent, PaginaNaoEncontradaComponent],
   exports: [
     NavbarComponent,
     ToastyModule,
@@ -41,6 +43,7 @@ registerLocaleData(localePt, 'pt-BR');
     ErrorHandleService,
 
     ConfirmationService,
+    Title,
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ]
 })

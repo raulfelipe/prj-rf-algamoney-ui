@@ -14,14 +14,15 @@ import { InputTextModule } from 'primeng/inputtext';
 
 import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
+import { LancamentosRoutingModule } from './lancamentos-routing.module';
 
 import { SharedModule } from './../shared/shared.module';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+
     InputTextModule,
     ButtonModule,
     DataTableModule,
@@ -31,16 +32,14 @@ import { RouterModule } from '@angular/router';
     SelectButtonModule,
     DropdownModule,
     CurrencyMaskModule,
+    
     SharedModule,
-    RouterModule
+    LancamentosRoutingModule
   ],
   declarations: [
     LancamentoCadastroComponent,
     LancamentosPesquisaComponent
   ],
-  exports: [
-    LancamentoCadastroComponent,
-    LancamentosPesquisaComponent
-  ]
+  exports: []
 })
 export class LancamentosModule { }

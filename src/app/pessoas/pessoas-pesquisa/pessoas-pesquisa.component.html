@@ -46,9 +46,9 @@
           </ng-template>
         </p-column>
         <p-column styleClass="col-acoes">
-          <ng-template let-lanc="rowData" pTemplate="body">
-            <a pButton icon="fa-pencil" pTooltip="Editar" toolTipPosition="top"></a>
-            <a pButton icon="fa-trash" pTooltip="Excluir" toolTipPosition="top" (click)="confirmarExclusao(lanc)"></a>
+          <ng-template let-pes="rowData" pTemplate="body">
+            <a pButton icon="fa-pencil" pTooltip="Editar" toolTipPosition="top" [routerLink]="['/pessoas',pes.codigo]"></a>
+            <a pButton icon="fa-trash" pTooltip="Excluir" toolTipPosition="top" (click)="confirmarExclusao(pes)"></a>
           </ng-template>
         </p-column>
 

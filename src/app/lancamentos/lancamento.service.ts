@@ -83,7 +83,6 @@ export class LancamentoService {
         JSON.stringify(lancamento), { headers })
       .toPromise()
       .then(response => response.json());
-      
   }
 
   atualizar(lancamento: Lancamento): Promise<Lancamento> {
@@ -96,9 +95,7 @@ export class LancamentoService {
       .toPromise()
       .then(response => {
         const lancamentoAlterado = response.json() as Lancamento;
-
         this.converterStringsParaDatas([lancamentoAlterado]);
-
         return lancamentoAlterado;
       });
   }
@@ -111,9 +108,7 @@ export class LancamentoService {
       .toPromise()
       .then(response => {
         const lancamento = response.json() as Lancamento;
-
         this.converterStringsParaDatas([lancamento]);
-
         return lancamento;
       });
   }
